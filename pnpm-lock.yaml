@@ -41,6 +41,9 @@ importers:
       express:
         specifier: ^4.18.2
         version: 4.19.2
+      p5:
+        specifier: ^1.9.4
+        version: 1.9.4
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -69,6 +72,9 @@ importers:
       '@types/node':
         specifier: ^18.18.0
         version: 18.19.42
+      '@types/p5':
+        specifier: ^1.7.6
+        version: 1.7.6
       jasmine-core:
         specifier: ~5.1.0
         version: 5.1.2
@@ -1507,6 +1513,9 @@ packages:
 
   '@types/node@20.14.12':
     resolution: {integrity: sha512-r7wNXakLeSsGT0H1AU863vS2wa5wBOK4bWMjZz2wj+8nBx+m5PeIn0k8AloSLpRuiwdRQZwarZqHE4FNArPuJQ==}
+
+  '@types/p5@1.7.6':
+    resolution: {integrity: sha512-6pLTOo0V3N5jZb5nTwjiv3lPHLK3Z/TjbhQUj8CTWXocUk1Z/f6OHTp3Pcwi1BhWnf5gqKUcyEb1gP0KIJuQgw==}
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -3177,6 +3186,9 @@ packages:
   p-retry@6.2.0:
     resolution: {integrity: sha512-JA6nkq6hKyWLLasXQXUrO4z8BUZGUt/LjlJxx8Gb2+2ntodU/SS63YZ8b0LUTbQ8ZB9iwOfhEPhg4ykKnn2KsA==}
     engines: {node: '>=16.17'}
+
+  p5@1.9.4:
+    resolution: {integrity: sha512-dhiZ9mvXx5pm8eRwml34xbeUwce4uS9Q2za0YOHg2p97N9iNAb5hTIHAt77CHKHXAh6A16u/oalz5egRfTyFWw==}
 
   package-json-from-dist@1.0.0:
     resolution: {integrity: sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==}
@@ -5797,6 +5809,8 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
+  '@types/p5@1.7.6': {}
+
   '@types/qs@6.9.15': {}
 
   '@types/range-parser@1.2.7': {}
@@ -7619,6 +7633,8 @@ snapshots:
       '@types/retry': 0.12.2
       is-network-error: 1.1.0
       retry: 0.13.1
+
+  p5@1.9.4: {}
 
   package-json-from-dist@1.0.0: {}
 
