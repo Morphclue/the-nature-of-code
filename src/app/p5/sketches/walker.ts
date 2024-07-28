@@ -4,7 +4,7 @@ export const walkerSketch = (p: p5) => {
   let walker: Walker;
 
   p.setup = () => {
-    p.createCanvas(640, 240);
+    p.createCanvas(800, 800);
     walker = new Walker(p);
     p.background(255);
   };
@@ -31,16 +31,14 @@ export const walkerSketch = (p: p5) => {
     }
 
     step() {
-      const choice = this.p.floor(this.p.random(4));
-      if (choice === 0) {
-        this.x++;
-      } else if (choice === 1) {
-        this.x--;
-      } else if (choice === 2) {
-        this.y++;
-      } else {
-        this.y--;
-      }
+      let xStep = random(-1, 1);
+      let yStep = random(-1, 1);
+      this.x += xStep;
+      this.y += yStep;
     }
   }
 };
+
+function random(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
