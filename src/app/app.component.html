@@ -1,8 +1,7 @@
 <div class="container">
   <div class="sidebar">
     <ul>
-      <li (click)="selectSketch('walkerSketch')">Walker Sketch</li>
-      <li (click)="selectSketch('randomNumberDistribution')">Random Number Distribution</li>
+      <li *ngFor="let sketch of sketches" (click)="selectSketch(sketch)">{{ sketch.name }}</li>
     </ul>
   </div>
   <div class="content">
