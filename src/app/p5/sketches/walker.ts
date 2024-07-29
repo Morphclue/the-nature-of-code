@@ -31,14 +31,10 @@ export const walkerSketch = (p: p5) => {
     }
 
     step() {
-      let xStep = random(-1, 1);
-      let yStep = random(-1, 1);
+      let xStep = p.random(-1, 1);
+      let yStep = p.random(-1, 1);
       this.x += xStep;
       this.y += yStep;
     }
   }
 };
-
-function random(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}

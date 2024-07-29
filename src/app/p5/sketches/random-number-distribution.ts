@@ -13,7 +13,7 @@ export const randomNumberDistribution = (p: p5) => {
 
   p.draw = () => {
     p.background(255);
-    let index = Math.floor(Math.random() * randomCounts.length);
+    let index = p.floor(p.random(randomCounts.length));
     randomCounts[index]++;
 
     p.stroke(0);
