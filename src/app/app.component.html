@@ -1,1 +1,11 @@
-<app-p5 [sketch]="walkerSketch"></app-p5>
+<div class="container">
+  <div class="sidebar">
+    <ul>
+      <li (click)="selectSketch('walkerSketch')">Walker Sketch</li>
+      <li (click)="selectSketch('randomNumberDistribution')">Random Number Distribution</li>
+    </ul>
+  </div>
+  <div class="content">
+    <app-p5 [sketch]="selectedSketch"></app-p5>
+  </div>
+</div>

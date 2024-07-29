@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {P5Component} from './p5/p5.component';
 import {walkerSketch} from './p5/sketches/walker';
+import {randomNumberDistribution} from './p5/sketches/random-number-distribution';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,13 @@ import {walkerSketch} from './p5/sketches/walker';
 })
 export class AppComponent {
   title = 'the-nature-of-code';
-  walkerSketch = walkerSketch;
+  sketches: any = {
+    walkerSketch,
+    randomNumberDistribution,
+  };
+  selectedSketch = this.sketches.walkerSketch;
+
+  selectSketch(sketchName: string) {
+    this.selectedSketch = this.sketches[sketchName];
+  }
 }

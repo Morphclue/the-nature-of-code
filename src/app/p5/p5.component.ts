@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, Input, OnDestroy, PLATFORM_ID, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild} from '@angular/core';
 import p5 from 'p5';
 
 @Component({
@@ -8,16 +8,25 @@ import p5 from 'p5';
   templateUrl: './p5.component.html',
   styleUrl: './p5.component.scss',
 })
-export class P5Component implements AfterViewInit, OnDestroy {
+export class P5Component implements AfterViewInit, OnDestroy, OnChanges {
   @Input() sketch!: (p: any) => void;
   @ViewChild('p5container') p5container: any;
   private p5instance!: p5;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+  constructor() {
   }
 
   ngAfterViewInit() {
     this.createCanvas();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['sketch'] && !changes['sketch'].firstChange) {
+      if (this.p5instance) {
+        this.p5instance.remove();
+      }
+      this.createCanvas();
+    }
   }
 
   ngOnDestroy() {
