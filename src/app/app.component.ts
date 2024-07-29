@@ -18,7 +18,7 @@ export class AppComponent {
     {name: 'Random Number Distribution', sketch: randomNumberDistribution},
     {name: 'Walker', sketch: walkerSketch},
   ];
-  selectedSketch = this.sketches.walkerSketch;
+  selectedSketch = walkerSketch;
 
   selectSketch(selection: any) {
     this.selectedSketch = selection.sketch;
