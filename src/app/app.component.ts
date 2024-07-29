@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {P5Component} from './p5/p5.component';
-import {walkerSketch} from './p5/sketches/walker';
-import {randomNumberDistribution} from './p5/sketches/random-number-distribution';
+import {randomNumberDistribution, walkerSketch} from './p5/sketches';
 
 @Component({
   selector: 'app-root',
