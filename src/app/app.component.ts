@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {P5Component} from './p5/p5.component';
-import {noise, randomNumberDistribution, walkerSketch} from './p5/sketches';
+import {bouncingBall, noise, randomNumberDistribution, walkerSketch} from './p5/sketches';
 import {NgForOf} from '@angular/common';
 
 @Component({
@@ -14,6 +14,7 @@ import {NgForOf} from '@angular/common';
 export class AppComponent {
   title = 'the-nature-of-code';
   sketches: any = [
+    {name: 'Bouncing Ball', sketch: bouncingBall},
     {name: 'Noise', sketch: noise},
     {name: 'Random Number Distribution', sketch: randomNumberDistribution},
     {name: 'Walker', sketch: walkerSketch},
