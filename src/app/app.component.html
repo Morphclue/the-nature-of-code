@@ -1,10 +1,19 @@
 <div class="container">
-  <div class="sidebar">
+  <aside class="sidebar" role="navigation" aria-label="Sketch list">
+    <div class="sidebar-header">
+      <input class="search" placeholder="Search sketches..." (input)="onQuery($event)" />
+    </div>
     <ul>
-      <li *ngFor="let sketch of sketches" (click)="selectSketch(sketch)">{{ sketch.name }}</li>
+      @for (sketch of filteredSketches; track sketch) {
+        <li (click)="selectSketch(sketch)" [class.active]="selectedSketch === sketch.sketch">
+          <div class="avatar">{{ sketch.name[0] }}</div>
+          <div class="name">{{ sketch.name }}</div>
+          <div class="chev">›</div>
+        </li>
+      }
     </ul>
-  </div>
-  <div class="content">
+  </aside>
+  <main class="content">
     <app-p5 [sketch]="selectedSketch"></app-p5>
-  </div>
+  </main>
 </div>

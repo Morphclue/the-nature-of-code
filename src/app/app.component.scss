@@ -1,14 +1,39 @@
 .container {
   display: flex;
   height: 100vh;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, serif;
 }
 
 .sidebar {
-  width: 200px;
-  background-color: #f4f4f4;
-  padding: 20px;
+  width: 260px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
+  padding: 16px;
   box-sizing: border-box;
   height: 100%;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 2px 0 8px rgba(15,23,42,0.02);
+}
+
+.sidebar-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.search {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.search:focus {
+  box-shadow: 0 2px 8px rgba(36,99,235,0.08);
+  border-color: rgba(36,99,235,0.6);
 }
 
 .sidebar ul {
@@ -19,14 +44,50 @@
 
 .sidebar li {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 10px;
-  margin-bottom: 5px;
-  background-color: #ddd;
-  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background-color 180ms ease, transform 120ms ease;
 }
 
 .sidebar li:hover {
-  background-color: #ccc;
+  background-color: rgba(15,23,42,0.03);
+  transform: translateX(4px);
+}
+
+.sidebar li .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#5eead4,#60a5fa);
+  color: #032;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(3,7,18,0.08);
+}
+
+.sidebar li .name {
+  flex: 1;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sidebar li .chev {
+  color: #94a3b8;
+  font-size: 18px;
+  transform: translateX(0);
+  transition: transform 120ms ease, color 120ms ease;
+}
+
+.sidebar li.active {
+  background: linear-gradient(90deg, rgba(96,165,250,0.10), rgba(124,58,237,0.03));
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06), inset 3px 0 10px rgba(99,102,241,0.08);
 }
 
 .content {

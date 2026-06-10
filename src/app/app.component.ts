@@ -1,13 +1,11 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
 import {P5Component} from './p5/p5.component';
 import {bouncingBall, gravityBalls, noise, randomNumberDistribution, walkerSketch} from './p5/sketches';
-import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, P5Component, NgForOf],
+  imports: [P5Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -21,8 +19,19 @@ export class AppComponent {
     {name: 'Walker', sketch: walkerSketch},
   ];
   selectedSketch = walkerSketch;
+  query = '';
 
   selectSketch(selection: any) {
     this.selectedSketch = selection.sketch;
+  }
+
+  onQuery(event: Event) {
+    const target = event.target as HTMLInputElement | null;
+    this.query = target ? target.value : '';
+  }
+
+  get filteredSketches() {
+    const q = (this.query || '').toLowerCase();
+    return this.sketches.filter((s: any) => s.name.toLowerCase().includes(q));
   }
 }
