@@ -10,7 +10,6 @@ import {bouncingBall, gravityBalls, noise, randomNumberDistribution, walkerSketc
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'the-nature-of-code';
   sketches: any = [
     {name: 'Bouncing Ball', sketch: bouncingBall},
     {name: 'Gravity Balls', sketch: gravityBalls},
